@@ -14,16 +14,17 @@ async function postUserData(user) {
 
 async function extractUserData() {
     return {
-        name: document.querySelector('#name'),
-        email: document.querySelector('#email'),
-        password: document.querySelector('#password'),
-        message: document.querySelector('#message'),
-        checkbox: document.querySelector('#checkbox'),
+        name: document.querySelector('#name').value,
+        email: document.querySelector('#email').value,
+        password: document.querySelector('#password').value,
+        message: document.querySelector('#message').value,
+        checkbox: document.querySelector('#checkbox').value,
     }
 }
 
 async function extractAndPostUserData() {
     const userData = await extractUserData();
+    console.log(userData)
     return await postUserData(userData);
 }
 
